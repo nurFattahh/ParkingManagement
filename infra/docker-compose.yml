@@ -1,0 +1,38 @@
+services:
+
+  postgres:
+    image: postgres:15
+    container_name: webparkir_postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: parking_db
+    ports:
+      - "5432:5432"
+
+  api:
+    build:
+      context: ../apps/api
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    env_file:
+      - ../.env
+    depends_on:
+      - postgres
+
+  web:
+    build:
+      context: ../apps/web
+      dockerfile: Dockerfile
+    ports:
+      - "5173:5173"
+    depends_on:
+      - api
+    command: npm run dev -- --host
+
+  redis:
+    image: redis:7
+    container_name: parking_redis
+    ports:
+      - "6379:6379"
