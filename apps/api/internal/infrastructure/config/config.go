@@ -1,30 +1,18 @@
 package config
 
-import (
-	"os"
-)
+import "os"
 
 type Config struct {
-	Port        string
 	DatabaseURL string
+	Port        string
 }
 
 func Load() (*Config, error) {
 
 	cfg := &Config{
-		Port:        getEnv("APP_PORT", "8080"),
-		DatabaseURL: getEnv("DATABASE_URL", ""),
+		DatabaseURL: os.Getenv("DATABASE_URL"),
+		Port:        os.Getenv("PORT"),
 	}
 
 	return cfg, nil
-}
-
-func getEnv(key string, fallback string) string {
-	value := os.Getenv(key)
-
-	if value == "" {
-		return fallback
-	}
-
-	return value
 }

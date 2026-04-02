@@ -1,14 +1,20 @@
-FROM golang:1.24
+# Dockerfile.dev
+FROM golang:1.25
 
 WORKDIR /app
 
+# Install Air (auto-reload)
+RUN go install github.com/air-verse/air@latest
+
+# Copy dependencies & download
 COPY go.mod go.sum ./
 RUN go mod download
 
+# Copy source code
 COPY . .
 
-RUN go build -o server cmd/api/main.go
-
+# Expose port
 EXPOSE 8080
 
-CMD ["./server"]
+# Jalankan Air untuk development
+CMD ["air", "-c", ".air.toml"]

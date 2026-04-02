@@ -1,0 +1,44 @@
+.login-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f4f6f9;
+  }
+  
+  .login-card {
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    width: 350px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .login-card h2 {
+    margin-bottom: 20px;
+  }
+  
+  .form-group {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-group input {
+    padding: 8px;
+    margin-top: 5px;
+  }
+  
+  button {
+    margin-top: 20px;
+    width: 100%;
+    padding: 10px;
+    background: #1976d2;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background: #125ea8;
+  }

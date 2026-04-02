@@ -1,22 +1,26 @@
 package database
 
 import (
-	"database/sql"
+	"WebParkir/apps/api/internal/domain"
 
-	_ "github.com/lib/pq"
+	"gorm.io/driver/postgres"
+	"gorm.io/gorm"
 )
 
-func ConnectPostgres(databaseURL string) (*sql.DB, error) {
+func ConnectPostgres(databaseURL string) (*gorm.DB, error) {
 
-	db, err := sql.Open("postgres", databaseURL)
-	if err != nil {
-		return nil, err
-	}
+	db, err := gorm.Open(postgres.Open(databaseURL), &gorm.Config{})
 
-	err = db.Ping()
 	if err != nil {
 		return nil, err
 	}
 
 	return db, nil
+}
+
+func AutoMigrate(db *gorm.DB) error {
+	return db.AutoMigrate(
+		&domain.User{},
+		&domain.Vehicle{},
+	)
 }

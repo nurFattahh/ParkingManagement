@@ -1,0 +1,123 @@
+.vehicles-container{
+    background:#f9fafb;
+    padding:20px;
+    border-radius:12px;
+}
+
+.vehicles-container h2{
+    margin-bottom:20px;
+}
+
+/* table */
+
+.table-wrapper{
+    background:white;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 4px 12px rgba(0,0,0,0.05);
+}
+
+.vehicles-table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+.vehicles-table thead{
+    background:#111827;
+    color:white;
+}
+
+.vehicles-table th{
+    padding:14px;
+    text-align:left;
+    font-weight:600;
+    font-size:14px;
+}
+
+.vehicles-table td{
+    padding:14px;
+    border-bottom:1px solid #eee;
+    font-size:14px;
+}
+
+/* hover effect */
+
+.vehicles-table tbody tr:hover{
+    background:#f3f4f6;
+}
+
+.action-cell{
+    display:flex;
+    gap:8px;
+    
+}
+
+/* tombol edit */
+.btn-edit{
+    background:#3b82f6;
+    color:white;
+    border:none;
+    padding:6px 10px;
+    border-radius:6px;
+    cursor:pointer;
+    font-size:12px;
+}
+
+.btn-edit:hover{
+    background:#2563eb;
+}
+
+/* tombol delete */
+.btn-delete{
+    background:#ef4444;
+    color:white;
+    border:none;
+    padding:6px 10px;
+    border-radius:6px;
+    cursor:pointer;
+    font-size:12px;
+}
+
+.btn-delete:hover{
+    background:#dc2626;
+}
+
+.header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:20px;
+}
+
+/* search bar */
+.search-bar{
+    display:flex;
+    gap:8px;
+}
+
+.search-bar input{
+    padding:8px 12px;
+    border:1px solid #ddd;
+    border-radius:8px;
+    outline:none;
+    font-size:14px;
+}
+
+.search-bar input:focus{
+    border-color:#3b82f6;
+}
+
+/* tombol search */
+.btn-search{
+    background:#10b981;
+    color:white;
+    border:none;
+    padding:8px 14px;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:14px;
+}
+
+.btn-search:hover{
+    background:#059669;
+}
